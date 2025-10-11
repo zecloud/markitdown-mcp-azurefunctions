@@ -1,0 +1,25 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "maxTelemetryItemsPerSecond": 20
+      }
+    }
+  },
+  "extensions": {
+        "http": {
+            "routePrefix": ""
+        }
+    },
+    "customHandler": {
+        "description": {
+            "defaultExecutablePath": "python",
+            "workingDirectory": "",
+            "arguments": ["-m","markitdown_mcp","--http","--host","0.0.0.0","--port","%FUNCTIONS_CUSTOMHANDLER_PORT%"]
+        },
+        "enableForwardingHttpRequest": true,
+        "enableHttpProxyingRequest": true
+    }
+}
